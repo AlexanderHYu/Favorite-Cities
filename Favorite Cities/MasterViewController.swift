@@ -13,6 +13,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var cities = [City]()
     
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,25 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        if let saveData = defaults.object(forKey: "data") as? Data{
+            if let decoded = try? JSONDecoder().decode([City].self, from: saveData) {
+                cities = decoded
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        tableView.reloadData()
+        self.saveData()
+    }
+    
+    func saveData() {
+        if let encoded = try? JSONEncoder().encode(cities) {
+            defaults.set(encoded, forKey: "data")
+        }
+        
     }
     
     @objc
@@ -59,14 +74,12 @@ class MasterViewController: UITableViewController {
                 let city = City(name: cityTexField.text!, state: stateTextField.text!, population: population, image: image.pngData()!)
                 self.cities.append(city)
                 self.tableView.reloadData()
+                self.saveData()
             }
         }
         alert.addAction(insertACtion)
         present(alert, animated: true, completion: nil)
     }
-    
-    
-    // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -107,11 +120,16 @@ class MasterViewController: UITableViewController {
         if editingStyle == .delete {
             cities.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            saveData()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
     
-    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let objectToMove = cities.remove(at: sourceIndexPath.row)
+        cities.insert(objectToMove, at: destinationIndexPath.row)
+        saveData()
+    }
 }
 
