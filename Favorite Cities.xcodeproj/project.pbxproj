@@ -15,6 +15,7 @@
 		5B55740922D3986600A716CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B55740722D3986600A716CD /* LaunchScreen.storyboard */; };
 		5B55741422D3986600A716CD /* Favorite_CitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B55741322D3986600A716CD /* Favorite_CitiesTests.swift */; };
 		5B55741F22D3986600A716CD /* Favorite_CitiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B55741E22D3986600A716CD /* Favorite_CitiesUITests.swift */; };
+		5B55742D22D39AF000A716CD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B55742C22D39AF000A716CD /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5B55741A22D3986600A716CD /* Favorite CitiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Favorite CitiesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55741E22D3986600A716CD /* Favorite_CitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite_CitiesUITests.swift; sourceTree = "<group>"; };
 		5B55742022D3986600A716CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B55742C22D39AF000A716CD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		5B5573F022D3986400A716CD = {
 			isa = PBXGroup;
 			children = (
+				5B55742C22D39AF000A716CD /* City.swift */,
 				5B5573FB22D3986400A716CD /* Favorite Cities */,
 				5B55741222D3986600A716CD /* Favorite CitiesTests */,
 				5B55741D22D3986600A716CD /* Favorite CitiesUITests */,
@@ -261,6 +264,7 @@
 			files = (
 				5B55740122D3986400A716CD /* DetailViewController.swift in Sources */,
 				5B5573FF22D3986400A716CD /* MasterViewController.swift in Sources */,
+				5B55742D22D39AF000A716CD /* City.swift in Sources */,
 				5B5573FD22D3986400A716CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
