@@ -81,7 +81,6 @@
 		5B5573F022D3986400A716CD = {
 			isa = PBXGroup;
 			children = (
-				5B55742C22D39AF000A716CD /* City.swift */,
 				5B5573FB22D3986400A716CD /* Favorite Cities */,
 				5B55741222D3986600A716CD /* Favorite CitiesTests */,
 				5B55741D22D3986600A716CD /* Favorite CitiesUITests */,
@@ -102,6 +101,7 @@
 		5B5573FB22D3986400A716CD /* Favorite Cities */ = {
 			isa = PBXGroup;
 			children = (
+				5B55742C22D39AF000A716CD /* City.swift */,
 				5B5573FC22D3986400A716CD /* AppDelegate.swift */,
 				5B5573FE22D3986400A716CD /* MasterViewController.swift */,
 				5B55740022D3986400A716CD /* DetailViewController.swift */,
