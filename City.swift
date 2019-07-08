@@ -18,7 +18,7 @@ class City: Codable {
     init(name: String, state: String, population: Int, image: Data) {
         self.name = name
         self.state = state
-        self. population = population
+        self.population = population
         self.image = image
     }
     
